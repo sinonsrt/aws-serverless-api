@@ -1,0 +1,12 @@
+{
+  "name": "patients-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "serverless offline start --config serverless.yml --stage dev"
+  },
+  "dependencies": {
+    "serverless-offline": "^8.7.0"
+  }
+}

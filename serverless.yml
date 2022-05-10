@@ -1,0 +1,39 @@
+service: patients-api
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+custom:
+  serverless-offline:
+    host: "0.0.0.0"
+
+functions:
+  listPatients:
+    handler: src/modules/patients/handlers/listPatients.list
+    events:
+      - http:
+          path: listPatients
+          method: GET
+  createPatient:
+    handler: src/modules/patients/handlers/createPatient.create
+    events:
+      - http:
+          path: createPatient
+          method: POST
+  updatePatient:
+    handler: src/modules/patients/handlers/updatePatient.update
+    events:
+      - http:
+          path: updatePatient 
+          method: PUT
+  deletePatient:
+    handler: src/modules/patients/handlers/deletePatient.delete
+    events:
+      - http:
+          path: deletePatient
+          method: DELETE
